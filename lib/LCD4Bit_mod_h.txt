@@ -1,0 +1,20 @@
+Éﬁ	#ifndef LCD4Bit_mod_h
+Éﬁ	#define LCD4Bit_mod_h
+Éﬁ	#include <inttypes.h>
+Éﬁ	class LCD4Bit_mod {
+Éﬁ	public:
+Éﬁ	  LCD4Bit_mod(int num_lines);
+Éﬁ	  void commandWrite(int value);
+Éﬁ	  void init();
+Éﬁ	  void print(int value);
+Éﬁ	  void printIn(char value[]);
+Éﬁ	  void clear();
+Éﬁ	  void cursorTo(int line_num, int x);
+Éﬁ	  void leftScroll(int chars, int delay_time);
+Éﬁ	  void commandWriteNibble(int nibble);
+Éﬁ	private:
+Éﬁ	  void pulseEnablePin();
+Éﬁ	  void pushNibble(int nibble);
+Éﬁ	  void pushByte(int value);
+Éﬁ	};
+Éﬁ	#endif
